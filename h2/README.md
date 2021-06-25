@@ -1,11 +1,11 @@
-# H2
-这个项目下只有 Demo
-## Maven + H2
-动用了 Mybatis 源码中的一个插件
-## (Spring boot version < 2.5) + H2
-
-## (Spring boot version >= 2.5) + H2
-有几个配置弃用了，其他改动忘了
-
-web 界面：
-![](WX20210617-142947.png)
+# H2 使用
+## h2_001
+[Github 传送门]()  
+H2 + maven + mybatis + 初始化 sql  
+## h2_002
+[Github 传送门]()  
+H2 + spring boot + mybatis + 单元测试 + 初始化 sql
+## h2_003
+[Github 传送门]()  
+H2 + spring boot web + mybatis + 初始化 sql
+![http://localhost:8080/h2-console](WX20210625-191707@2x.png)

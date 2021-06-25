@@ -1,0 +1,1 @@
+INSERT INTO users (username, sex, nation) VALUES ('aaa', 1, 1);
