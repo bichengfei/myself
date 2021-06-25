@@ -26,7 +26,7 @@ public class MyConfig {
 
     @PostConstruct
     public void init() throws ClassNotFoundException {
-        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)appContext.getBean("sqlSessionFactory");
+        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory) appContext.getBean("sqlSessionFactory");
         ConfigurationHelper.loadEnumHandler(sqlSessionFactory);
     }
 

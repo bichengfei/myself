@@ -1,7 +1,7 @@
 package cn.bcf.mybatis.mapper;
 
 import cn.bcf.mybatis.entity.UserEntity;
-import org.apache.ibatis. annotations.Mapper;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 

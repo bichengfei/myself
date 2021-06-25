@@ -10,13 +10,13 @@ import java.util.Stack;
  **/
 public class _02 {
 
-    public static String fanZhuan(StringBuffer inputString){
+    public static String fanZhuan(StringBuffer inputString) {
         Stack<Character> stack = new Stack<>();
-        for (int i = 0;i < inputString.length();i ++){
+        for (int i = 0; i < inputString.length(); i++) {
             stack.push(inputString.charAt(i));
         }
         StringBuffer sb = new StringBuffer();
-        for (int i = 0;i < inputString.length();i ++){
+        for (int i = 0; i < inputString.length(); i++) {
             sb.append(stack.pop());
         }
         return sb.toString();

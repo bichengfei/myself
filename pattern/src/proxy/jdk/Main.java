@@ -9,13 +9,13 @@ import java.lang.reflect.Proxy;
  **/
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Subject realSubject = new RealSubject();
 
         MyInvocationHandler myInvocationHandler = new MyInvocationHandler(realSubject);
 
         //Subject proxyClass = (Subject)Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),new Class[]{Subject.class},myInvocationHandler);
-        Subject proxyClass = (Subject)Proxy.newProxyInstance(Subject.class.getClassLoader(),new Class[]{Subject.class},myInvocationHandler);
+        Subject proxyClass = (Subject) Proxy.newProxyInstance(Subject.class.getClassLoader(), new Class[]{Subject.class}, myInvocationHandler);
 
         proxyClass.sellBooks();
 

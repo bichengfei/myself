@@ -8,8 +8,7 @@ package enums;
 public enum SexEnum {
 
     MAN(1, "男"),
-    WOMAN(3, "女")
-    ;
+    WOMAN(3, "女");
 
     private Integer key;
     private String value;

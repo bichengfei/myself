@@ -9,7 +9,11 @@
     "categoryId": "",
     "repayPlanStatus": "",
     "status": "7",
-    "statusList": [7,10,12],
+    "statusList": [
+      7,
+      10,
+      12
+    ],
     "advisorName": "",
     "signAmount": "",
     "advisorMobile": "",

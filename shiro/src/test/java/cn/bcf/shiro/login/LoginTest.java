@@ -20,23 +20,23 @@ public class LoginTest {
     private Login login;
 
     @Test
-    public void LoginTest(){
-        login.login("classpath:shiro.ini","zhang","123");
+    public void LoginTest() {
+        login.login("classpath:shiro.ini", "zhang", "123");
     }
 
     @Test
-    public void Realm01Test(){
-        login.login("classpath:shiro-realm.ini","zhang","123");
+    public void Realm01Test() {
+        login.login("classpath:shiro-realm.ini", "zhang", "123");
     }
 
     @Test
-    public void jdbcRealmTest(){
-        login.login("classpath:shiro-jdbc-realm.ini","zhang","123");
+    public void jdbcRealmTest() {
+        login.login("classpath:shiro-jdbc-realm.ini", "zhang", "123");
     }
 
     @Test
-    public void authorizerTest(){
-        login.login("classpath:shiro-jdbc-realm02.ini","zhang","123");
+    public void authorizerTest() {
+        login.login("classpath:shiro-jdbc-realm02.ini", "zhang", "123");
         //判断拥有权限：user:create
         System.out.println(Base.getSubject().isPermitted("user1:update"));
         System.out.println(Base.getSubject().isPermitted("user2:update"));

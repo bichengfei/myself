@@ -8,15 +8,15 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
 
-public class Producer implements Basic{
+public class Producer implements Basic {
 
     public static void sendMessage(String queueName) throws IOException, TimeoutException {
         Connection conn = ConnUtil.getConn();
         Channel channel = conn.createChannel();
-        channel.queueDeclare(queueName,false,true,false,null);
+        channel.queueDeclare(queueName, false, true, false, null);
 
-        for (int i = 0;i < 50;i ++) {
-            channel.basicPublish("",queueName,null,(String.valueOf(System.currentTimeMillis())).getBytes(StandardCharsets.UTF_8));
+        for (int i = 0; i < 50; i++) {
+            channel.basicPublish("", queueName, null, (String.valueOf(System.currentTimeMillis())).getBytes(StandardCharsets.UTF_8));
         }
 
         channel.close();

@@ -1,30 +1,35 @@
 # Redis
+
 采用哨兵机制部署
 
 ## 集群配置
+
 ### redis集群
+
 主机名|IP|用户名|密码|端口|安装位置
-:-:|:-:|:-:|:-:|:-:|:-
-localhost|192.168.9.19|root|123.com|7000|/lamp/redis-4.0.12
-localhost|192.168.9.21|root|123.com|7000|/lamp/redis-4.0.12
-localhost|192.168.9.21|root|123.com|7001|/lamp/redis-4.0.12
+:-:|:-:|:-:|:-:|:-:|:- localhost|192.168.9.19|root|123.com|7000|/lamp/redis-4.0.12
+localhost|192.168.9.21|root|123.com|7000|/lamp/redis-4.0.12 localhost|192.168.9.21|root|123.com|7001|/lamp/redis-4.0.12
 
 ## 哨兵集群
+
 主机名|IP|用户名|密码|端口
 :-:|:-:|:-:|:-:|:-:
-localhost|192.168.9.19|root|123.com|27000
-localhost|192.168.9.21|root|123.com|27000
+localhost|192.168.9.19|root|123.com|27000 localhost|192.168.9.21|root|123.com|27000
 localhost|192.168.9.21|root|123.com|27001
 
 ## 启动
+
 要先启动全部的redis-server，再启动redis-sentinel
+
 #### 192.168.9.19上启动
+
 ```
 [root@localhost redis-4.0.12]# ./src/redis-server ./conf/redis-slave.conf
 [root@localhost redis-4.0.12]# nohup ./src/redis-sentinel ./conf/sentinel-slave.conf &
 ```
 
-#### 192.168.9.21上启动  
+#### 192.168.9.21上启动
+
 ```
 [root@localhost redis-4.0.12]# ./src/redis-server ./conf/redis-slave.conf
 [root@localhost redis-4.0.12]# ./src/redis-server ./conf/redis-master.conf
@@ -33,6 +38,7 @@ localhost|192.168.9.21|root|123.com|27001
 ```
 
 ## 查看启动情况
+
 ```
 [root@localhost ~]# /lamp/redis-4.0.12/src/redis-cli -p 7001
 127.0.0.1:7001> info replication
@@ -57,7 +63,9 @@ repl_backlog_first_byte_offset:535214
 repl_backlog_histlen:1048576
 127.0.0.1:7001>exit
 ```
-从上面输出中可以看出，主节点是`192.168.9.21:7000`，再退出登录主节点  
+
+从上面输出中可以看出，主节点是`192.168.9.21:7000`，再退出登录主节点
+
 ```
 [root@localhost ~]# /lamp/redis-4.0.12/src/redis-cli -p 7000
 127.0.0.1:7000> info replication
@@ -76,4 +84,5 @@ repl_backlog_first_byte_offset:559620
 repl_backlog_histlen:1048576
 127.0.0.1:7000>
 ```
+
 从输出中可以看到master及slave的ip和端口

@@ -9,7 +9,7 @@ public class Queue {
 
     private TwoHeadLinked linked = new TwoHeadLinked();
 
-    private Queue () {
+    private Queue() {
 
     }
 

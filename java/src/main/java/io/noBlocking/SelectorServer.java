@@ -48,7 +48,7 @@ public class SelectorServer {
                     ByteBuffer readBuffer = ByteBuffer.allocate(1024);
                     int num = socketChannel.read(readBuffer);
 
-                    if(num > 0) {
+                    if (num > 0) {
                         System.out.println("收到数据：" + new String(readBuffer.array()).trim());
                         ByteBuffer buffer = ByteBuffer.wrap("返回给客户端的数据...".getBytes());
                         socketChannel.write(buffer);

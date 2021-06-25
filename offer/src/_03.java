@@ -10,7 +10,7 @@ public class _03 {
     ArrayList<Integer> list = new ArrayList<>();
 
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-        if (listNode == null){
+        if (listNode == null) {
             return list;
         }
         printListFromTailToHead(listNode.next);

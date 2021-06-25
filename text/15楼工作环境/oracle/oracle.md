@@ -1,32 +1,39 @@
 # ORACLE
+
 cdh所用roacle  
-参考：  
+参考：
+
 1. [关于ORA-00257: archiver error. Connect internal only, until freed 错误的处理方法](https://blog.csdn.net/cw370008359/article/details/51023794)
 
 ## 节点配置
+
 主机名|IP|用户名|密码|端口|安装位置
 :-:|:-:|:-:|:-:|:-:|:-:
 localhost|192.168.9.19|root|123.com|1521|/u01/app/oracle
 
 ## start
+
 #### 启动监听
+
 1. 切换到oracle用户  
-`su - oracle`
+   `su - oracle`
 1. 查看监听状态  
-`lsnrctl status`  
+   `lsnrctl status`
 2. 启动监听  
-`lsnrctl start`
-3. 查看监听是否启动  
+   `lsnrctl start`
+3. 查看监听是否启动
 4. 关闭监听  
-`lsnrctl stop`
+   `lsnrctl stop`
 
 #### 启动服务
+
 1. 打开登录窗口  
-`sqlplus /nolog`
+   `sqlplus /nolog`
 2. 以管理员身份登录  
-`connect /as sysdba`
+   `connect /as sysdba`
 3. 启动实例  
-`startup`
+   `startup`
+
 ```
 [oracle@localhost ~]$ sqlplus /nolog
 SQL*Plus: Release 11.2.0.1.0 Production on Tue Sep 3 15:38:09 2019
@@ -48,29 +55,37 @@ SQL>
 ## stop
 
 ## FAQ
+
 1. `archiver error. Connect internal only, until freed`  
-发生错误的原因参考1中已经表达的很清楚，这里介绍一下15楼的解决过程
-	+ 远程登录192.168.9.19
-	+ 切换oracle用户  
+   发生错误的原因参考1中已经表达的很清楚，这里介绍一下15楼的解决过程
+    + 远程登录192.168.9.19
+    + 切换oracle用户
+
 ```
 [root@localhost ~]# su - oracle
 上一次登录：一 8月 19 15:29:32 CST 2019pts/0 上
 [oracle@localhost ~]$
 ```
+
 	+ 打开登录窗口  
+
 ```
 [oracle@localhost ~]$ sqlplus /nolog
 SQL*Plus: Release 11.2.0.1.0 Production on Mon Aug 19 18:07:40 2019
 Copyright (c) 1982, 2009, Oracle.  All rights reserved.
 SQL>
 ```
+
 	+ 以管理员身份登录  
+
 ```
 SQL> connect /as sysdba
 Connected.
 ```
+
 	+ 检查flash recovery area的使用情况  
-`SQL>  select * from V$FLASH_RECOVERY_AREA_USAGE;`  
+
+`SQL>  select * from V$FLASH_RECOVERY_AREA_USAGE;`
 
 	![flash recovery area](./image/err01_01.jpg)  
 	(这里显示的已用百分比才51.23，不知道为什么会出现问题，反正按这个方法处理后，问题解除)

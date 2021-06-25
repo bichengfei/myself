@@ -1,6 +1,5 @@
 # centos7内网ntp服务端配置文件
 
-
 ```
 # For more information about this file, see the man pages  
 # ntp.conf(5), ntp_acc(5), ntp_auth(5), ntp_clock(5), ntp_misc(5), ntp_mon(5).  

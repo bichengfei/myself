@@ -34,6 +34,7 @@ public class ConfigurationHelper {
 
     /**
      * 找出 @EnumHandler 标注的类
+     *
      * @return
      */
     private static List<String> getJavaType() {

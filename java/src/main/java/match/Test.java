@@ -12,8 +12,8 @@ public class Test {
         boolean res = a.matches("\\w");
         System.out.println(res);
 
-        HashMap<Integer,String> map = new HashMap<>();
-        map.put(1,"1");
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "1");
         map.get(1);
         List<Integer> list = new ArrayList();
         list.equals(list);

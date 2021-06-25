@@ -5,6 +5,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * BFS（Breadth First Search）
+ *
  * @Description：TODO
  * @Author：bichengfei
  * @Date：2021/4/25 2:59 下午
@@ -16,7 +17,7 @@ public class BFS {
         Queue<Integer> queue = new LinkedList<>();
 
         map.put(0, 0);
-        for (int i = 0;i < arr[0].length;i ++) {
+        for (int i = 0; i < arr[0].length; i++) {
             if (arr[0][i] == 1 && !map.keySet().contains(i)) {
                 queue.add(i);
                 map.put(i, 1);
@@ -25,7 +26,7 @@ public class BFS {
 
         while (!queue.isEmpty()) {
             Integer index = queue.poll();
-            for (int j = 0;j < arr[index].length; j ++) {
+            for (int j = 0; j < arr[index].length; j++) {
                 if (arr[index][j] == 1 && !map.keySet().contains(j)) {
                     queue.add(j);
                     map.put(j, map.get(index) + 1);
@@ -35,7 +36,6 @@ public class BFS {
 
         return map;
     }
-
 
 
     public static void main(String[] args) {

@@ -15,7 +15,7 @@ public class FreemarkerConfig {
     freemarker.template.Configuration configuration;
 
     @PostConstruct
-    public void setSharVariable(){
+    public void setSharVariable() {
         configuration.setSharedVariable("block", new BlockDirective());
         configuration.setSharedVariable("override", new OverrideDirective());
         configuration.setSharedVariable("extends", new ExtendsDirective());

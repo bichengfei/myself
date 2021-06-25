@@ -4,24 +4,24 @@ import java.util.Scanner;
 
 public class _03 {
 
-    private static boolean func(String str){
+    private static boolean func(String str) {
         String[] arr = str.split(",");
         String a = arr[0];
         String b = arr[1];
-        if(a.length() != b.length())
+        if (a.length() != b.length())
             return false;
-        for(int i = 0;i < a.length();i ++){
-            if(b.charAt(i) == a.charAt(0)){
-                for(int j = 0;j <= b.length();j ++){
-                    if(j == b.length())
+        for (int i = 0; i < a.length(); i++) {
+            if (b.charAt(i) == a.charAt(0)) {
+                for (int j = 0; j <= b.length(); j++) {
+                    if (j == b.length())
                         return true;
-                    if(j >= b.length() - i){
-                        if(b.charAt(i + j -a.length()) == a.charAt(0 + j)){
+                    if (j >= b.length() - i) {
+                        if (b.charAt(i + j - a.length()) == a.charAt(0 + j)) {
                             continue;
                         }
-                    }else if(b.charAt(i + j) == a.charAt(0 + j)){
+                    } else if (b.charAt(i + j) == a.charAt(0 + j)) {
                         continue;
-                    }else{
+                    } else {
                         break;
                     }
                 }

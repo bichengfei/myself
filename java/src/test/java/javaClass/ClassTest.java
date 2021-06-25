@@ -14,14 +14,14 @@ import java.rmi.registry.Registry;
 public class ClassTest {
 
     @Test
-    public void test001(){
+    public void test001() {
         Class<User> userClass = User.class;
         Field[] fields = userClass.getDeclaredFields();
         int a = 1;
     }
 
     @Test
-    public <T> void test002(){
+    public <T> void test002() {
         Class<T> userClass = (Class<T>) User.class;
         Class<?> superclass = userClass.getSuperclass();
         int a = 1;

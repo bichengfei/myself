@@ -27,7 +27,7 @@ public class EnumHandlerProcess {
 
     @PostConstruct
     public void init() throws ClassNotFoundException {
-        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)appContext.getBean("sqlSessionFactory");
+        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory) appContext.getBean("sqlSessionFactory");
         if (sqlSessionFactory == null) {
             throw new RuntimeException("未获取到 sqlSessionFactory 对象，插件未成功初始化");
         }

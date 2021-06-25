@@ -11,7 +11,7 @@ public class ThreadTest {
 
 }
 
-class Thread01 extends Thread{
+class Thread01 extends Thread {
 
     @Override
     public void run() {
@@ -19,7 +19,7 @@ class Thread01 extends Thread{
     }
 }
 
-class Thread02 implements Runnable{
+class Thread02 implements Runnable {
     @Override
     public void run() {
         System.out.println("实现Runnable");

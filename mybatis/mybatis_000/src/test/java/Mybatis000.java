@@ -86,7 +86,7 @@ public class Mybatis000 {
         statusList05.add(ReservationStatus.FAILED.key);
         Integer count05 = mapper.selectCountByStatus(statusList05);
 
-        int a =  1;
+        int a = 1;
 
     }
 

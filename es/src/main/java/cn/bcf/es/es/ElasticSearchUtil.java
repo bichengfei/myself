@@ -10,7 +10,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- *
  * @Description
  * @Auther: bichengfei
  * @Data: 2019/3/21 10:48
@@ -35,8 +34,8 @@ public class ElasticSearchUtil {
         return client;
     }
 
-    public void close(TransportClient client){
-        if (client!= null){
+    public void close(TransportClient client) {
+        if (client != null) {
             client.close();
         }
     }

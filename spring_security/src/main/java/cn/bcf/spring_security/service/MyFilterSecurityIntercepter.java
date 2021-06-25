@@ -16,13 +16,13 @@ public class MyFilterSecurityIntercepter extends AbstractSecurityInterceptor imp
     private FilterInvocationSecurityMetadataSource securityMetadataSource;
 
     @Autowired
-    public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager){
+    public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager) {
         super.setAccessDecisionManager(myAccessDecisionManager);
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        FilterInvocation filterInvocation = new FilterInvocation(servletRequest,servletResponse,filterChain);
+        FilterInvocation filterInvocation = new FilterInvocation(servletRequest, servletResponse, filterChain);
         invoke(filterInvocation);
     }
 
@@ -31,7 +31,7 @@ public class MyFilterSecurityIntercepter extends AbstractSecurityInterceptor imp
         try {
             filterInvocation.getChain().doFilter(filterInvocation.getRequest(), filterInvocation.getResponse());
         } finally {
-            super.afterInvocation(token,null);
+            super.afterInvocation(token, null);
         }
     }
 

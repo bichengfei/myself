@@ -8,8 +8,7 @@ package cn.bcf.mybatis.enums;
 public enum SexEnum implements BaseEnum {
 
     MAN(3, "男"),
-    WOMAN(1, "女")
-    ;
+    WOMAN(1, "女");
 
     private Integer key;
     private String value;

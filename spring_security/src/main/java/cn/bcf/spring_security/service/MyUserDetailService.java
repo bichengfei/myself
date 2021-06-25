@@ -28,7 +28,7 @@ public class MyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userMapper.loadUserByUsername(username);
-        if (user != null){
+        if (user != null) {
             List<Role> roles = roleMapper.getRolesByUserId(user.getId());
             user.setAuthorities(roles);
         }

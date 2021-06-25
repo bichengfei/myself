@@ -7,10 +7,10 @@ package niuke;
  */
 public class _01 {
 
-    public static boolean Find(int target, int [][] array) {
-        for(int i = 0;i < array.length;i ++) {
-            for(int j = 0;j < array[i].length;j ++) {
-                if(array[i][j] == target) {
+    public static boolean Find(int target, int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] == target) {
                     return true;
                 }
             }
@@ -21,9 +21,9 @@ public class _01 {
     public static void main(String[] args) {
         int target = 1500;
         int[][] arr = {
-                {1,3,5},
-                {2,4,6},
-                {11,12,1500}
+                {1, 3, 5},
+                {2, 4, 6},
+                {11, 12, 1500}
         };
         System.out.println(Find(1500, arr));
     }

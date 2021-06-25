@@ -13,7 +13,7 @@ public class BitAndWildPermissionResolver implements PermissionResolver {
 
     @Override
     public Permission resolvePermission(String s) {
-        if (s.startsWith("+")){
+        if (s.startsWith("+")) {
             return new BitPermission(s);
         }
         return new WildcardPermission(s);

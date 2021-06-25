@@ -25,7 +25,7 @@ public class _01 {
             }
         };
 
-        com01.compare(1,2);
+        com01.compare(1, 2);
     }
 
     @Test

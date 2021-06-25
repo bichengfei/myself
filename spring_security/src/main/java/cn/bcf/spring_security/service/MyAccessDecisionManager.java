@@ -27,24 +27,24 @@ import java.util.List;
 @Component
 public class MyAccessDecisionManager implements AccessDecisionManager {
 
-   @Override
-    public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes){
-       if (null == configAttributes || 0 >= configAttributes.size()){
-           return;
-       } else {
-           String needRole;
-           for (Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ){
-               needRole = iter.next().getAttribute();
+    @Override
+    public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes) {
+        if (null == configAttributes || 0 >= configAttributes.size()) {
+            return;
+        } else {
+            String needRole;
+            for (Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ) {
+                needRole = iter.next().getAttribute();
 
-               for (GrantedAuthority ga : authentication.getAuthorities()){
-                   if (needRole.trim().equals(ga.getAuthority().trim())){
-                       return;
-                   }
-               }
-           }
-           throw new AccessDeniedException("无访问权限");
-       }
-   }
+                for (GrantedAuthority ga : authentication.getAuthorities()) {
+                    if (needRole.trim().equals(ga.getAuthority().trim())) {
+                        return;
+                    }
+                }
+            }
+            throw new AccessDeniedException("无访问权限");
+        }
+    }
 
     @Override
     public boolean supports(ConfigAttribute configAttribute) {

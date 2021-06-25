@@ -14,7 +14,7 @@ public class ListTest {
 
     @Test
     public void test001() {
-        List<String> list = new ArrayList<String>(){
+        List<String> list = new ArrayList<String>() {
             {
                 add("1");
             }
@@ -29,7 +29,7 @@ public class ListTest {
 
     @Test
     public void test003() {
-        new ArrayList<String>(){
+        new ArrayList<String>() {
             {
                 add("1");
             }
@@ -52,7 +52,7 @@ public class ListTest {
 
     @Test
     public void test006() {
-        List<User> list = new ArrayList<User>(){
+        List<User> list = new ArrayList<User>() {
             {
                 add(new User(1, "AA"));
                 add(new User(2, "BB"));
@@ -70,7 +70,7 @@ public class ListTest {
 
     @Test
     public void test007() {
-        List<User> list = new ArrayList<User>(){
+        List<User> list = new ArrayList<User>() {
 
         };
 

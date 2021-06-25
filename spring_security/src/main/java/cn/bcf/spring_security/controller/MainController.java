@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/")
-    public String root(){
+    public String root() {
         return "redirect:/index";
     }
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @RequestMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
     @RequestMapping("/login-error")
-    public String loginError(Model model){
-        model.addAttribute("loginError",true);
+    public String loginError(Model model) {
+        model.addAttribute("loginError", true);
         return "login";
     }
 

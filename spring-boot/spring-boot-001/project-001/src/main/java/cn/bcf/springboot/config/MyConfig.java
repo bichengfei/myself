@@ -29,7 +29,7 @@ public class MyConfig {
     @Bean(initMethod = "init")
     @ConditionalOnMissingBean
     public Init init() throws ClassNotFoundException {
-        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)appContext.getBean("sqlSessionFactory");
+        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory) appContext.getBean("sqlSessionFactory");
         ConfigurationHelper.loadEnumHandler(sqlSessionFactory);
         System.out.println("001111111 " + sqlSessionFactory);
         return new Init();

@@ -1,4 +1,5 @@
 # centos 7 mysql配置文件（全）
+
 ```
 [client]  
 port = 3306  

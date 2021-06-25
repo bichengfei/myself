@@ -1,6 +1,5 @@
 # 安装Cloudera Manager Server和 Agent
 
-
 ```
 [root@cdh01 CDH]# /opt/cm-5.9.3/share/cmf/schema/scm_prepare_database.sh mysql cm -hlocalhost -uroot -p
 root --scm-host localhost scm scm scm

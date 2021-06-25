@@ -17,7 +17,7 @@ class ListNode {
 
 public class _04 {
 
-    public ListNode Merge(ListNode list1,ListNode list2) {
+    public ListNode Merge(ListNode list1, ListNode list2) {
         ListNode list03 = null;
         list03 = merge(list1, list2, list03);
         return list03;
@@ -52,13 +52,14 @@ public class _04 {
             return list03;
         }
 
-        while(list01 != null && list02 != null && list01.val <= list02.val) {
+        while (list01 != null && list02 != null && list01.val <= list02.val) {
             int val = list01.val;
-            list03 = add(list03, val);;
+            list03 = add(list03, val);
+            ;
             list01 = list01.next;
         }
 
-        while(list01 != null && list02 != null && list02.val <= list01.val) {
+        while (list01 != null && list02 != null && list02.val <= list01.val) {
             int val = list02.val;
             list03 = add(list03, val);
             list02 = list02.next;

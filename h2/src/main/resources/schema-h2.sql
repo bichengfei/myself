@@ -1,9 +1,8 @@
-create schema bichegnfei;
-create schema test001;
-create schema test002;
-set schema bichegnfei;
+create schema bichengfei;
+set schema bichengfei;
 
-create table user(
-    id int primary key auto_increment,
+create table user
+(
+    id       int primary key auto_increment,
     username varchar(50)
 );

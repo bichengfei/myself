@@ -5,7 +5,7 @@ package proxy;
  * @Auther: bichengfei
  * @Data: 2019/4/11 14:51
  **/
-public class RealImage implements Image{
+public class RealImage implements Image {
 
     private String fileName;
 
@@ -19,7 +19,7 @@ public class RealImage implements Image{
         System.out.println("displaying " + fileName);
     }
 
-    private void loadFromDisk(String fileName){
+    private void loadFromDisk(String fileName) {
         System.out.println("Loading " + fileName);
     }
 }

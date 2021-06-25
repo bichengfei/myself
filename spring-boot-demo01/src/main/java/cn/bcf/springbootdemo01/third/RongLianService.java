@@ -14,7 +14,7 @@ public interface RongLianService {
     /*@RequestLine("POST /third/productList")
     String productList(Page page);*/
 
-    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @Headers({"Content-Type: application/json", "Accept: application/json"})
     @RequestLine("POST /third/productList")
     String productList(Page page);
 

@@ -18,7 +18,7 @@ public class FeignController {
     RongLianService rongLianService;
 
     @RequestMapping("/ronglian/productList")
-    public String rongLian(){
+    public String rongLian() {
         Page page = new Page(1, 10);
         String res = rongLianService.productList(page);
         System.out.println(res);

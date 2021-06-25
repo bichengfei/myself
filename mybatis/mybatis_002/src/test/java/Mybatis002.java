@@ -38,7 +38,7 @@ public class Mybatis002 {
 
     @Test
     public void test002() {
-        UserEntity userList = session.selectOne("mapper.UserMapper.selectAll");
+        List<UserEntity> userList = session.selectList("mapper.UserMapper.selectAll");
         out.println(userList);
 
     }
@@ -47,5 +47,12 @@ public class Mybatis002 {
     public void test003() {
         UserMapper mapper = session.getMapper(UserMapper.class);
         mapper.selectById(1);
+    }
+
+    @Test
+    public void test004() {
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        List<UserEntity> userList = mapper.selectAll();
+        out.println(userList);
     }
 }

@@ -7,7 +7,7 @@ import com.gitee.easyopen.doc.annotation.ApiDocField;
  * @Author：bichengfei
  * @Date：2021/4/16 11:18 上午
  */
-public class User implements UserParent{
+public class User implements UserParent {
 
     @Deprecated
     public Integer id;

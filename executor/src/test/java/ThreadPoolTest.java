@@ -6,22 +6,22 @@ public class ThreadPoolTest {
     ThreadPool threadPool = null;
 
     @Before
-    public void before(){
+    public void before() {
         threadPool = new ThreadPool();
     }
 
     @Test
-    public void singleThreadPool(){
+    public void singleThreadPool() {
         threadPool.singleThreadPool();
     }
 
     @Test
-    public void cachedThreadPoolTest(){
+    public void cachedThreadPoolTest() {
         threadPool.cachedThreadPool();
     }
 
     @Test
-    public void fixedThreadPoolTest(){
+    public void fixedThreadPoolTest() {
         threadPool.fixedThreadPool();
     }
 

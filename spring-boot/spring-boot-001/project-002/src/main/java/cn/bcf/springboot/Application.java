@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContext;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class Application  extends SpringBootServletInitializer implements CommandLineRunner {
+public class Application extends SpringBootServletInitializer implements CommandLineRunner {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -26,12 +26,10 @@ public class Application  extends SpringBootServletInitializer implements Comman
     private ApplicationContext appContext;
 
     @Override
-    public void run(String... args) throws Exception
-    {
+    public void run(String... args) throws Exception {
         String[] beans = appContext.getBeanDefinitionNames();
         Arrays.sort(beans);
-        for (String bean : beans)
-        {
+        for (String bean : beans) {
             System.out.println(bean + " of Type :: " + appContext.getBean(bean).getClass());
         }
     }

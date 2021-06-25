@@ -1,4 +1,3 @@
-
 spring:
   freemarker:
     charset: utf-8

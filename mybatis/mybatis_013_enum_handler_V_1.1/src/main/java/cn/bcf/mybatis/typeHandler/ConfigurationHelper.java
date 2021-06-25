@@ -21,6 +21,7 @@ public class ConfigurationHelper {
 
     /**
      * 向 sqlSessionFactory 的类型处理器中，注入 EnumKeyTypeHandler
+     *
      * @param factory
      * @throws ClassNotFoundException
      */
@@ -36,6 +37,7 @@ public class ConfigurationHelper {
 
     /**
      * 找出 @EnumHandler 标注的类
+     *
      * @return
      */
     private static List<String> getJavaType() {

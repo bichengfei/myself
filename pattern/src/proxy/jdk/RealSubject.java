@@ -5,7 +5,7 @@ package proxy.jdk;
  * @Auther: bichengfei
  * @Data: 2019/4/11 15:00
  **/
-public class RealSubject implements Subject{
+public class RealSubject implements Subject {
 
 
     @Override

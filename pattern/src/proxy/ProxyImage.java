@@ -5,7 +5,7 @@ package proxy;
  * @Auther: bichengfei
  * @Data: 2019/4/11 14:52
  **/
-public class ProxyImage implements Image{
+public class ProxyImage implements Image {
 
     private RealImage realImage;
 
@@ -17,7 +17,7 @@ public class ProxyImage implements Image{
 
     @Override
     public void display() {
-        if (realImage == null){
+        if (realImage == null) {
             realImage = new RealImage(fileName);
         }
         realImage.display();

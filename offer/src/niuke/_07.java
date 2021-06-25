@@ -11,10 +11,10 @@ public class _07 {
 
     public static int fun(String str) {
         int[] arr = new int[256];
-        for (int i = 0;i < str.length();i ++) {
+        for (int i = 0; i < str.length(); i++) {
             arr[str.charAt(i)] = arr[str.charAt(i)] + 1;
         }
-        for (int i = 0;i < str.length();i ++) {
+        for (int i = 0; i < str.length(); i++) {
             if (arr[str.charAt(i)] == 1) {
                 return i;
             }

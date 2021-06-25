@@ -10,9 +10,9 @@ public class Singleton_05 {
     public Singleton_05 getTest() {
         if (test == null) {
             lock.lock();
-                if (test == null) {
-                    test = new Singleton_05();
-                }
+            if (test == null) {
+                test = new Singleton_05();
+            }
             lock.unlock();
         }
         return test;

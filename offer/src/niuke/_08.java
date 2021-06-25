@@ -19,7 +19,7 @@ public class _08 {
             public Comparator<? super String> comparator() {
                 return super.comparator();
             }
-            
+
         }
     }
 

@@ -16,24 +16,24 @@ import org.springframework.stereotype.Component;
  * @Data: 2019/4/28 16:53
  **/
 @Component
-public class Login extends Base{
+public class Login extends Base {
 
-    public void login(String filePath,String username,String password){
+    public void login(String filePath, String username, String password) {
         Factory<SecurityManager> factory = new IniSecurityManagerFactory(filePath);
         SecurityManager securityManager = factory.getInstance();
         SecurityUtils.setSecurityManager(securityManager);
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
 
         try {
             subject.login(token);
             System.out.println("登录成功");
-        }catch (AuthenticationException e){
+        } catch (AuthenticationException e) {
             e.printStackTrace();
         }
     }
 
-    public void logout(){
+    public void logout() {
         getSubject().logout();
     }
 

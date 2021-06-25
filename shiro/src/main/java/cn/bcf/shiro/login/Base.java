@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Base {
 
-    public static Subject getSubject(){
-        Subject subject =  SecurityUtils.getSubject();
-        if (subject != null){
+    public static Subject getSubject() {
+        Subject subject = SecurityUtils.getSubject();
+        if (subject != null) {
             return subject;
-        }else
+        } else
             throw new NullPointerException("subject 为空");
     }
 }

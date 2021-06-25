@@ -7,7 +7,7 @@ package reflect;
  */
 public interface UserParent {
 
-    default void defaultMethod(){
+    default void defaultMethod() {
         System.out.println("1111");
     }
 

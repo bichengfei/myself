@@ -15,6 +15,7 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 /**
  * 官方文档：https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/java-docs-index.html
+ *
  * @Description
  * @Auther: bichengfei
  * @Data: 2019/3/21 11:07
@@ -32,9 +33,9 @@ public class EsCRUD {
         //方法二
 
         Map<String, Object> json = new HashMap<String, Object>();
-        json.put("user","kimchy");
-        json.put("postDate",new Date());
-        json.put("message","trying out Elasticsearch");
+        json.put("user", "kimchy");
+        json.put("postDate", new Date());
+        json.put("message", "trying out Elasticsearch");
 
         //方法三
         //用jaskson，感觉太麻烦
@@ -43,14 +44,14 @@ public class EsCRUD {
         //用 Elasticsearch helpers
         XContentBuilder builder = jsonBuilder()
                 .startObject()
-                .field("user","kimchy")
-                .field("postDate",new Date())
-                .field("message","trying out Elasticsearch")
+                .field("user", "kimchy")
+                .field("postDate", new Date())
+                .field("message", "trying out Elasticsearch")
                 .endObject();
         String json1 = Strings.toString(builder);
     }
 
-    public void create(TransportClient client) throws IOException{
+    public void create(TransportClient client) throws IOException {
         IndexResponse response = client.prepareIndex("twitter", "_doc", "1")
                 .setSource(jsonBuilder()
                         .startObject()

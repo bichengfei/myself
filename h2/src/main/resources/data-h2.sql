@@ -1,3 +1,2 @@
-begin ;
-insert into user(username) values('1111');
-commit ;
+insert into user(username)
+values ('1111');

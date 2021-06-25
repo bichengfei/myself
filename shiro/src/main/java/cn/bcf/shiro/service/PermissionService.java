@@ -3,7 +3,6 @@ package cn.bcf.shiro.service;
 import org.apache.shiro.authz.Permission;
 
 /**
- *
  * @Description
  * @Auther: bichengfei
  * @Data: 2019/4/28 18:33

@@ -18,6 +18,7 @@ public class MatchUtil {
 
         /**
          * 全部是数字
+         *
          * @param str
          * @return
          */
@@ -27,6 +28,7 @@ public class MatchUtil {
 
         /**
          * 全部不是数字
+         *
          * @param str
          * @return
          */
@@ -36,8 +38,9 @@ public class MatchUtil {
 
         /**
          * 长度为 n 的数字
+         *
          * @param str
-         * @param n 长度
+         * @param n   长度
          * @return
          */
         protected static boolean digitFix(String str, int n) {
@@ -62,7 +65,6 @@ public class MatchUtil {
         protected static boolean all(String str) {
             return str.matches("[a-zA-Z]+");
         }
-
 
 
     }

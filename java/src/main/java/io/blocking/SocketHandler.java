@@ -1,7 +1,5 @@
 package io.blocking;
 
-import sun.nio.ch.IOUtil;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
@@ -11,7 +9,7 @@ import java.nio.channels.SocketChannel;
  * @Author：bichengfei
  * @Date：2021/5/11 5:15 下午
  */
-public class SocketHandler implements Runnable{
+public class SocketHandler implements Runnable {
 
     private SocketChannel socketChannel;
 

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface PrdReservationMapper {
 
-    List<Map<String,String>> select(@Param("query") ReservationSearchQueryDto dto);
+    List<Map<String, String>> select(@Param("query") ReservationSearchQueryDto dto);
 
     Integer selectCountByStatus(@Param("statusList") List<Integer> statusList);
 

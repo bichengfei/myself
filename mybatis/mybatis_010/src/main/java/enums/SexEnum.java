@@ -8,11 +8,10 @@ import annotation.EnumHandler;
  * @Date：2021/5/26 7:50 下午
  */
 @EnumHandler
-public enum SexEnum{
+public enum SexEnum {
 
     MAN(3, "男"),
-    WOMAN(1, "女")
-    ;
+    WOMAN(1, "女");
 
     private Integer key;
     private String value;

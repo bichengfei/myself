@@ -101,7 +101,7 @@ public class IOTest {
         try (
                 RandomAccessFile raf = new RandomAccessFile(file, "rw");
                 FileChannel randomChannel = raf.getChannel()
-                ){
+        ) {
             ByteBuffer buffer = randomChannel.map(FileChannel.MapMode.READ_ONLY, 0, file.length());
             randomChannel.position(file.length());
             randomChannel.write(buffer);
@@ -109,11 +109,11 @@ public class IOTest {
     }
 
     @Test
-    public void test006() throws IOException{
+    public void test006() throws IOException {
         try (
                 FileInputStream fis = new FileInputStream(PATH);
                 FileChannel channel = fis.getChannel();
-                ){
+        ) {
             ByteBuffer buffer = ByteBuffer.allocate(1024);
             while (channel.read(buffer) != -1) {
                 // 锁定 buffer 的空白区

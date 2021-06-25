@@ -9,6 +9,7 @@
 - global session: 只有在基于porlet的web应用中才有意义
 
 ##### 生命周期
+
 Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy
 
 + 实例化

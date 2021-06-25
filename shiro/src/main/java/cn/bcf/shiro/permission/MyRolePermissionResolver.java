@@ -16,7 +16,7 @@ public class MyRolePermissionResolver implements RolePermissionResolver {
 
     @Override
     public Collection<Permission> resolvePermissionsInRole(String s) {
-        if ("role01".equalsIgnoreCase(s)){
+        if ("role01".equalsIgnoreCase(s)) {
             return Arrays.asList((Permission) new WildcardPermission("menu:*"));
         }
         return null;

@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ComponentScan(basePackages = {"common.util","cn.uxin.mq.rabbitMQ"})
+@ComponentScan(basePackages = {"common.util", "cn.uxin.mq.rabbitMQ"})
 public class ElasticsearchTest {
 
     @Autowired
@@ -34,12 +34,12 @@ public class ElasticsearchTest {
     }
 
     @After
-    public void after(){
+    public void after() {
         elasticSearchUtil.close(client);
     }
 
     @Test
-    public void createTest() throws IOException{
+    public void createTest() throws IOException {
         esCRUD.create(client);
     }
 

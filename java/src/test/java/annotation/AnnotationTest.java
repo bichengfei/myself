@@ -1,5 +1,6 @@
 package annotation;
 
+import org.atteo.classindex.ClassIndex;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -24,6 +25,15 @@ public class AnnotationTest {
     public void test002() {
         Class clazz = annotation.Test.class;
         clazz.getAnnotations();
+    }
+
+    @Test
+    public void test003() {
+        Iterable<Class<?>> klasses = ClassIndex.getAnnotated(annotation.Test.class);
+        for (Class<?> clazz : klasses) {
+            int a = 1;
+        }
+
     }
 
 }

@@ -33,16 +33,16 @@ public class JdbcTest {
     }
 
     /**
-     *
      * 参考：https://blog.csdn.net/thirtysix1207/article/details/1799800
      * 参数01：
      * ResultSet.TYPE_FORWARD_ONLY    Result 指针只可向后移动
      * ResultSet.TYPE_SCROLL_INSENSITIVE    ResultSet 指针可前后移动，不及时同步数据库数据变化
      * ResultSet.TYPE_SCROLL_SENSITIVE    ResultSet 指针可前后移动，并及时同步数据库数据变化
-     *
+     * <p>
      * 参数02：
      * ResultSet.CONCUR_READ_ONLY   ResultSet 只读
      * ResultSet.CONCUR_UPDATABLE    ResultSet 可更新数据库数据
+     *
      * @throws SQLException
      */
     @Test
@@ -71,7 +71,7 @@ public class JdbcTest {
             out.println(rs.getInt("users.id") + "," + rs.getString("users.username") + "," + rs.getInt("users.sex"));
         }
     }
-    
+
     @Test
     public void test004() throws SQLException {
         Statement stat = conn.createStatement();
@@ -113,5 +113,5 @@ public class JdbcTest {
             out.println(rs.getInt("GENERATED_KEY"));
         }
     }
-    
+
 }

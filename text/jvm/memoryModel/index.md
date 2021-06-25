@@ -1,5 +1,7 @@
-#  JVM内存模型
-参考：  
+# JVM内存模型
+
+参考：
+
 1. [Java8移除永久代](https://blog.csdn.net/aa747604141/article/details/52673582)
 
 ### 内存模型

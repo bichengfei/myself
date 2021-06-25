@@ -14,6 +14,7 @@ import java.util.*;
 
 /**
  * 请求--权限对应关系
+ *
  * @Auther BiChengfei
  * @Date: 2019/12/6 10:27
  */
@@ -22,17 +23,17 @@ public class MyInvocationSecurityMetadataSourceService implements FilterInvocati
     @Autowired
     private PermissionMapper permissionMapper;
 
-    private static HashMap<String,Collection<ConfigAttribute>> map = null;
+    private static HashMap<String, Collection<ConfigAttribute>> map = null;
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
-        if (map == null){
+        if (map == null) {
             loadResourceDefine();
         }
-        HttpServletRequest request = ((FilterInvocation)object).getHttpRequest();
-        for (Iterator<String> it = map.keySet().iterator(); it.hasNext(); ){
+        HttpServletRequest request = ((FilterInvocation) object).getHttpRequest();
+        for (Iterator<String> it = map.keySet().iterator(); it.hasNext(); ) {
             String url = it.next();
-            if (new AntPathRequestMatcher(url).matches(request)){
+            if (new AntPathRequestMatcher(url).matches(request)) {
                 return map.get(url);
             }
         }
@@ -49,21 +50,21 @@ public class MyInvocationSecurityMetadataSourceService implements FilterInvocati
         return true;
     }
 
-    public void loadResourceDefine(){
+    public void loadResourceDefine() {
         map = new HashMap<>();
         List<RolePermisson> rolePermissionList = permissionMapper.getRolePermissions();
 
-        for (RolePermisson rolePermisson: rolePermissionList){
+        for (RolePermisson rolePermisson : rolePermissionList) {
             String url = rolePermisson.getUrl();
             String roleName = rolePermisson.getRoleName();
             ConfigAttribute role = new SecurityConfig(roleName);
 
-            if (map.containsKey(url)){
+            if (map.containsKey(url)) {
                 map.get(url).add(role);
             } else {
                 List<ConfigAttribute> list = new ArrayList<>();
                 list.add(role);
-                map.put(url,list);
+                map.put(url, list);
             }
         }
     }

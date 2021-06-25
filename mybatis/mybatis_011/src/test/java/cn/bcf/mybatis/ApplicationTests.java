@@ -32,21 +32,20 @@ class ApplicationTests {
     public void test002() {
         String[] beans = appContext.getBeanDefinitionNames();
         Arrays.sort(beans);
-        for (String bean : beans)
-        {
+        for (String bean : beans) {
             System.out.println(bean + " of Type :: " + appContext.getBean(bean).getClass());
         }
     }
 
     @Test
     public void test003() throws ClassNotFoundException {
-        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)appContext.getBean("sqlSessionFactory");
+        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory) appContext.getBean("sqlSessionFactory");
         int a = 1;
     }
 
     @Test
     public void test004() throws ClassNotFoundException {
-        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)appContext.getBean("sqlSessionFactory");
+        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory) appContext.getBean("sqlSessionFactory");
         ConfigurationHelper.loadEnumHandler(sqlSessionFactory);
 
         List<UserEntity> list = userService.selectAll();
@@ -55,7 +54,7 @@ class ApplicationTests {
 
     @Test
     public void test005() throws ClassNotFoundException {
-        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)appContext.getBean("sqlSessionFactory");
+        SqlSessionFactory sqlSessionFactory = (SqlSessionFactory) appContext.getBean("sqlSessionFactory");
         ConfigurationHelper.loadEnumHandler(sqlSessionFactory);
         List<UserEntity> list = userService.selectAll();
         list.stream().forEach(x -> System.out.println(x.toString()));

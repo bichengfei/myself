@@ -1,4 +1,5 @@
 # myself
+
 1. [随笔](./text/index.md)
 2. [基本算法](./arithmetic)
 3. [设计模式](./pattern)

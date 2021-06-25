@@ -18,14 +18,14 @@ public class _05 {
         }
         int value = arr[0];
         int count = 1;
-        for (int i = 0;i < arr.length;i ++) {
+        for (int i = 0; i < arr.length; i++) {
             if (i == 0) {
                 value = arr[i];
             } else {
                 if (value == arr[i]) {
-                    count ++;
+                    count++;
                 } else {
-                    count --;
+                    count--;
                     if (count == 0) {
                         count = 1;
                         value = arr[i];
@@ -36,9 +36,9 @@ public class _05 {
         }
 
         int num = 0;
-        for (int i = 0;i < arr.length;i ++) {
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] == value) {
-                num ++;
+                num++;
             }
         }
 
@@ -54,7 +54,7 @@ public class _05 {
         int length = in.nextInt();
 
         int[] arr = new int[length];
-        for (int i = 0;i < arr.length;i ++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = in.nextInt();
         }
         System.out.println(fun(arr));

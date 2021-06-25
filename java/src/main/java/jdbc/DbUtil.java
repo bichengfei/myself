@@ -11,14 +11,14 @@ public class DbUtil {
     private final static String dbPassword = "root";
     private final static String jdbcName = "com.mysql.jdbc.Driver";
 
-    public static Connection getCon(){
+    public static Connection getCon() {
         Connection con = null;
         try {
             Class.forName(jdbcName);
-            con = DriverManager.getConnection(dbUrl,dbUsername,dbPassword);
-        } catch (ClassNotFoundException e){
+            con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return con;
@@ -28,13 +28,13 @@ public class DbUtil {
         if (con != null) {
             try {
                 con.close();
-            } catch (SQLException e){
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Connection con = getCon();
         close(con);
     }
