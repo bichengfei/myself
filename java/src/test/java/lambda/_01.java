@@ -3,6 +3,8 @@ package lambda;
 import org.junit.Test;
 
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
 
 import static java.lang.System.*;
@@ -15,6 +17,11 @@ import static java.lang.System.*;
  * @Date：2021/5/8 6:24 下午
  */
 public class _01 {
+
+    @Test
+    public void test() {
+
+    }
 
     @Test
     public void test001() {
@@ -34,6 +41,16 @@ public class _01 {
         Function<Integer, Integer> function02 = x -> x + 3;
         out.println(function01.apply(1));
         out.println(function01.andThen(function02).apply(1));
+    }
+
+    @Test
+    public void test003() {
+        Map<String, Integer> map = new HashMap<String, Integer>(){
+            {
+                put("spark", 1);
+                put("spring", 1);
+            }
+        };
     }
 
 }

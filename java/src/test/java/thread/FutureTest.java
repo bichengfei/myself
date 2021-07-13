@@ -34,7 +34,13 @@ public class FutureTest {
 
     @Test
     public void test002() {
+        ExecutorService pool = Executors.newScheduledThreadPool(10);
+        pool.execute(new Runnable() {
+            @Override
+            public void run() {
 
+            }
+        });
     }
 
 }
