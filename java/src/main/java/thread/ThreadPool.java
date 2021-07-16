@@ -10,23 +10,24 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadPool {
 
+
     /**
-     * 可缓存线程池
+     * 单线程化线程池
      */
-    public void cachedThreadPool() {
-        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+    public void singleThreadPool() {
+        ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
         for (int i = 0; i < 10; i++) {
             final int index = i;
-            try {
-                Thread.sleep(index * 1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            singleThreadExecutor.execute(new Runnable() {
 
-            cachedThreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
                     System.out.println(index);
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
@@ -56,6 +57,28 @@ public class ThreadPool {
     }
 
     /**
+     * 可缓存线程池
+     */
+    public void cachedThreadPool() {
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        for (int i = 0; i < 10; i++) {
+            final int index = i;
+            try {
+                Thread.sleep(index * 1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            cachedThreadPool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println(index);
+                }
+            });
+        }
+    }
+
+    /**
      * 具有定时功能的定长线程池
      */
     public void scheduledThreadPool() {
@@ -78,25 +101,4 @@ public class ThreadPool {
         },1,2,TimeUnit.SECONDS);*/
     }
 
-    /**
-     * 单线程化线程池
-     */
-    public void singleThreadPool() {
-        ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-        for (int i = 0; i < 10; i++) {
-            final int index = i;
-            singleThreadExecutor.execute(new Runnable() {
-
-                @Override
-                public void run() {
-                    System.out.println(index);
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-        }
-    }
 }
